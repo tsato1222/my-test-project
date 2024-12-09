@@ -1,8 +1,7 @@
 import boto3
 
-aws_access_key_dummy = 'AKIAIOSFODNN7EXAMPLE'
-aws_access_key = 'AKIAIOSFODNN7EXAMPLE'
-aws_secret_key = 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY'
+aws_access_key = 'AKIA****WwMA****CDEF'
+aws_secret_key = '0e8/****twHF****ZNvq****tn7U****PPeq****'
 
 session = boto3.Session(
     aws_access_key_id=aws_access_key,
