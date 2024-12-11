@@ -1,0 +1,25 @@
+name: scan with KICS and upload SARIF
+
+on:
+ push:
+   branches:
+     - main
+
+jobs:
+  kics-job:
+    runs-on: ubuntu-latest
+    name: kics-github-action
+    steps:
+      - uses: actions/checkout@v2
+      - name: Mkdir results-dir
+        # make sure results dir is created
+        run: mkdir -p results-dir
+      - name: run kics Scan
+        uses: Checkmarx/kics-github-action@v2.1.3
+        with:
+          path: iac-scan
+          output_path: results-dir
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results-dir/results.sarif
